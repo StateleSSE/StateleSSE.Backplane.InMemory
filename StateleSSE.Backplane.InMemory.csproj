@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net8.0;net9.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <!-- NuGet Package Metadata -->
+    <PackageId>StateleSSE.Backplane.InMemory</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Alex</Authors>
+    <Description>In-memory backplane for Server-Sent Events (SSE) in ASP.NET Core. Ideal for development, testing, and single-server deployments. Part of the StateleSSE ecosystem for building stateless, type-safe, real-time streaming applications.</Description>
+    <PackageTags>sse;server-sent-events;backplane;in-memory;real-time;aspnetcore;stateless</PackageTags>
+    <RepositoryUrl>https://github.com/yourusername/StateleSSE</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RootNamespace>StateleSSE.Backplane.InMemory</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../StateleSSE.Abstractions/StateleSSE.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="PolySharp" Version="1.14.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
