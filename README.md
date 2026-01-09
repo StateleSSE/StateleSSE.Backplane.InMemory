@@ -1,5 +1,13 @@
 # StateleSSE.Backplane.InMemory
 
+> **⚠️ DEPRECATED**: This package has been consolidated into `StateleSSE.AspNetCore`.
+>
+> **Migration:** The in-memory backplane is now included in `StateleSSE.AspNetCore`. Simply install that package and use `services.AddInMemorySseBackplane()`.
+>
+> This package is no longer maintained and will not receive updates.
+
+---
+
 In-memory backplane for single-server SSE deployments.
 
 ## Installation
