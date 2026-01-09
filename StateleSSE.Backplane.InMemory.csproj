@@ -12,7 +12,7 @@
     <Authors>Alex</Authors>
     <Description>In-memory backplane for Server-Sent Events (SSE) in ASP.NET Core. Ideal for development, testing, and single-server deployments. Part of the StateleSSE ecosystem for building stateless, type-safe, real-time streaming applications.</Description>
     <PackageTags>sse;server-sent-events;backplane;in-memory;real-time;aspnetcore;stateless</PackageTags>
-    <RepositoryUrl>https://github.com/uldahlalex/StateleSSE</RepositoryUrl>
+    <RepositoryUrl>https://github.com/StateleSSE/StateleSSE.Backplane.InMemory</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>StateleSSE.Backplane.InMemory</RootNamespace>
@@ -22,8 +22,12 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="Exists('../StateleSSE.Abstractions/StateleSSE.Abstractions.csproj')">
     <ProjectReference Include="../StateleSSE.Abstractions/StateleSSE.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="!Exists('../StateleSSE.Abstractions/StateleSSE.Abstractions.csproj')">
+    <PackageReference Include="StateleSSE.Abstractions" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
